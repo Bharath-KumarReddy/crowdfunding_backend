@@ -1,6 +1,7 @@
 const express = require('express');
 const connecttoDB = require('./db')
 const auth = require('./routes/auth');
+const camp = require('./routes/Camp');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -11,6 +12,7 @@ app.use(cors());
 connecttoDB();
 
 app.use('/api/auth',auth);
+app.use('/api/camp',camp);
 
 const port = 5000;
 
